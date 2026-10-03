@@ -13,21 +13,23 @@
 // 3. Display the Nth Fibonacci sequence. Include your name in the output.
 
 int main() {
-    int N;
-    printf("Enter an integer N, where N >= 2: ");
-    scanf("%d", &N);
+    while (1) {
+        int N;
+        printf("Enter an integer N, where N >= 2: ");
+        scanf("%d", &N);
 
-    if (N < 2) {
-        printf("Error: N must be >= 2.\n");
-        return 1;
-    }
+        if (N < 2) {
+            printf("Error: N must be >= 2.\n");
+            return 1;
+        }
 
-    int a = 0, b = 1, c;
-    for (int i = 2; i <= N; i++) {
-        c = a + b;
-        a = b;
-        b = c;
+        int a = 0, b = 1, c;
+        for (int i = 2; i <= N; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        printf("The Nth Fibonacci sequence is: %d\n", c);
+        return 0;
     }
-    printf("The Nth Fibonacci sequence is: %d\n", c);
-    return 0;
 }
